@@ -2,8 +2,8 @@
 
 This repo contains all the material we sued for our BC TechDays 2025 session *Testing is Boring... Until Now!*. This includes:
 - slide deck
+- [user stories](https://github.com/fluxxus-nl/BCTD2025_TestingIsBoring_UntilNow/blob/main/Extended%20Text%20on%20Assembly%20Documents%20User%20Stories.md)
 - AL demo project [Extended Text on Assembly Documents](https://github.com/fluxxus-nl/BCTD2025_TestingIsBoring_UntilNow/issues/1) containing:
-  - user stories
   - feature app
   - test app: traditional (AL coded) tests, page scripting test and data-driven (AL coded) tests
 
