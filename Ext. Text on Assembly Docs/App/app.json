@@ -1,0 +1,29 @@
+{
+  "id": "38ace02b-20d9-43f6-9dc2-d8c4a174edcf",
+  "name": "Extended Text on Assembly Documents (app)",
+  "publisher": "fluxxus.nl",
+  "version": "1.0.0.0",
+  "brief": "Example app for test automation classes",
+  "description": "This example app contains a feature to add extended text to assembly documents",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "https://github.com/fluxxus-nl/Test-Automation-Examples",
+  "url": "http://www.fluxxus.nl",
+  "logo": "images/logo.png",
+  "platform": "1.0.0.0",
+  "application": "26.0.0.0",
+  "dependencies": [],
+  "screenshots": [],
+  "idRanges": [
+    {
+      "from": 76400,
+      "to": 76449
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://App.com/help/",
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "15.0"
+}

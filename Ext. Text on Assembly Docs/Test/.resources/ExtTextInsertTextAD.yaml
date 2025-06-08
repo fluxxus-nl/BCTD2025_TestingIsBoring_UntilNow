@@ -1,0 +1,65 @@
+tests:
+- test_setup:
+    ScenarioId: 48
+    AssemblyDocumentType: Order
+    Extended Text Enabled: true
+    Targetted No. of Extended Text Lines: 1
+  expected_data:
+    Created No. of Extended Text Lines: 1
+- test_setup:
+    ScenarioId: 55
+    AssemblyDocumentType: Order
+    Extended Text Enabled: false
+    Targetted No. of Extended Text Lines: 0
+  expected_data:
+    Created No. of Extended Text Lines: 0
+- test_setup:
+    ScenarioId: 62
+    AssemblyDocumentType: Order
+    Extended Text Enabled: true
+    Targetted No. of Extended Text Lines: 2
+  expected_data:
+    Created No. of Extended Text Lines: 1
+- test_setup:
+    ScenarioId: 49
+    AssemblyDocumentType: Quote
+    Extended Text Enabled: true
+    Targetted No. of Extended Text Lines: 1
+  expected_data:
+    Created No. of Extended Text Lines: 1
+- test_setup:
+    ScenarioId: 56
+    AssemblyDocumentType: Quote
+    Extended Text Enabled: false
+    Targetted No. of Extended Text Lines: 0
+  expected_data:
+    Created No. of Extended Text Lines: 0
+- test_setup:
+    ScenarioId: 63
+    AssemblyDocumentType: Quote
+    Extended Text Enabled: true
+    Targetted No. of Extended Text Lines: 2
+  expected_data:
+    Created No. of Extended Text Lines: 1
+- test_setup:
+    ScenarioId: 50
+    AssemblyDocumentType: Blanket Order
+    Extended Text Enabled: true
+    Targetted No. of Extended Text Lines: 1
+  expected_data:
+    Created No. of Extended Text Lines: 1
+- test_setup:
+    ScenarioId: 57
+    AssemblyDocumentType: Blanket Order
+    Extended Text Enabled: false
+    Targetted No. of Extended Text Lines: 0
+  expected_data:
+    Created No. of Extended Text Lines: 0
+- test_setup:
+    ScenarioId: 64
+    AssemblyDocumentType: Blanket Order
+    Extended Text Enabled: true
+    Targetted No. of Extended Text Lines: 2
+  expected_data:
+    Created No. of Extended Text Lines: 1
+

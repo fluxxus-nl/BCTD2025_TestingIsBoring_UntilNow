@@ -1,0 +1,23 @@
+tests:
+- test_setup:
+    ScenarioId: 30
+    AssemblyDocumentType: Order
+    Automatic Ext. Texts Enabled: false
+    Extended Text Enabled: false
+  expected_data:
+    Created No. of Extended Text Lines: 0
+- test_setup:
+    ScenarioId: 37
+    AssemblyDocumentType: Quote
+    Automatic Ext. Texts Enabled: false
+    Extended Text Enabled: false
+  expected_data:
+    Created No. of Extended Text Lines: 0
+- test_setup:
+    ScenarioId: 44
+    AssemblyDocumentType: Blanket Order
+    Automatic Ext. Texts Enabled: false
+    Extended Text Enabled: false
+  expected_data:
+    Created No. of Extended Text Lines: 0
+

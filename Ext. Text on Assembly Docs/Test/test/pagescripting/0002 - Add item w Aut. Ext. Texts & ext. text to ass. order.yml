@@ -1,0 +1,342 @@
+name: 0002 - Add to assembly order line for item with Aut. Ext. Texts enabled
+  and ext. text enable
+description: Test recording
+start:
+  profile: ORDER PROCESSOR
+steps:
+  - type: navigate
+    target:
+      - page: Item List
+    description: Navigate to Items
+  - type: page-shown
+    source:
+      page: Item List
+    modal: false
+    runtimeId: b3m3
+    description: Page <caption>Items</caption> was shown.
+  - type: invoke
+    target:
+      - page: Item List
+        runtimeRef: b3m3
+      - action: Control_New
+    invokeType: New
+    description: Invoke New on <caption>New</caption>
+  - type: page-shown
+    source:
+      page: Select Item Templ. List
+    modal: true
+    runtimeId: b40l
+    description: Page <caption>Select a template for a new item</caption> was shown.
+  - type: input
+    target:
+      - page: Select Item Templ. List
+        runtimeRef: b40l
+      - scope: filter
+        field: filter:system:search
+    value: item
+    isFilterAsYouType: true
+    description: Input <value>item</value> into <caption>Search</caption>
+  - type: invoke
+    target:
+      - page: Select Item Templ. List
+        runtimeRef: b40l
+    invokeType: LookupOk
+    description: Invoke LookupOk on <caption>Select a template for a new item</caption>
+  - type: page-closed
+    source:
+      page: Select Item Templ. List
+    runtimeId: b40l
+    description: Page <caption>Select a template for a new item</caption> was closed.
+  - type: page-shown
+    source:
+      page: Item Card
+    modal: false
+    runtimeId: b41i
+    description: Page <caption>New - Item Card</caption> was shown.
+  - type: input
+    target:
+      - page: Item Card
+        runtimeRef: b41i
+      - field: Automatic Ext. Texts
+    value: true
+    description: Input <value>true</value> into <caption>Automatic Ext. Texts</caption>
+  - type: input
+    target:
+      - page: Item Card
+        runtimeRef: b41i
+      - field: Description
+    value: Item with "Automatic Ext. Texts" enabled
+    description: Input <value>Item with "Automatic Ext. Texts" enabled</value> into
+      <caption>Description</caption>
+  - type: invoke
+    target:
+      - page: Item Card
+        runtimeRef: b41i
+      - action: E&xtended Texts
+    description: Invoke <caption>Extended Texts</caption>
+  - type: page-shown
+    source:
+      page: Extended Text List
+    modal: false
+    runtimeId: b4an
+    description: Page <caption>Extended Text List</caption> was shown.
+  - type: invoke
+    target:
+      - page: Extended Text List
+        runtimeRef: b4an
+      - action: Control_New
+    invokeType: New
+    description: Invoke New on <caption>New</caption>
+  - type: page-shown
+    source:
+      page: Extended Text
+    modal: false
+    runtimeId: b4cu
+    description: Page <caption>New - Extended Text</caption> was shown.
+  - type: focus
+    target:
+      - page: Extended Text
+        runtimeRef: b4cu
+      - field: Language Code
+    description: Focus <caption>Language Code</caption>
+  - type: focus
+    target:
+      - page: Extended Text
+        runtimeRef: b4cu
+      - field: Description
+    description: Focus <caption>Description</caption>
+  - type: input
+    target:
+      - page: Extended Text
+        runtimeRef: b4cu
+      - field: Description
+    value: Extended text enabled for assembly order
+    description: Input <value>Extended text enabled for assembly order</value> into
+      <caption>Description</caption>
+  - type: focus
+    target:
+      - page: Extended Text
+        runtimeRef: b4cu
+      - part: Control25
+      - page: Extended Text Lines
+      - repeater: Control1
+      - field: Text
+    description: Focus <caption>Text</caption>
+  - type: input
+    target:
+      - page: Extended Text
+        runtimeRef: b4cu
+      - part: Control25
+      - page: Extended Text Lines
+      - repeater: Control1
+      - field: Text
+    value: Extended text enabled for assembly order
+    description: Input <value>Extended text enabled for assembly order</value> into
+      <caption>Text</caption>
+  - type: copy-value
+    source:
+      - page: Extended Text
+        runtimeRef: b4cu
+      - part: Control25
+      - page: Extended Text Lines
+      - repeater: Control1
+      - field: Text
+    name: Extended Text Lines - Text
+    valueType: string
+    description: Copy value from <caption>Text</caption>
+  - type: close-page
+    target:
+      - page: Extended Text
+        runtimeRef: b4cu
+    description: Close page <caption>New - Extended Text</caption>
+  - type: page-closed
+    source:
+      page: Extended Text
+    runtimeId: b4cu
+    description: Page <caption>New - Extended Text</caption> was closed.
+  - type: close-page
+    target:
+      - page: Extended Text List
+        runtimeRef: b4an
+    description: Close page <caption>Extended Text List - 70064 ∙ Item with
+      "Automatic Ext. Texts" enabled</caption>
+  - type: page-closed
+    source:
+      page: Extended Text List
+    runtimeId: b4an
+    description: Page <caption>Extended Text List - 70064 ∙ Item with "Automatic
+      Ext. Texts" enabled</caption> was closed.
+  - type: copy-value
+    source:
+      - page: Item Card
+        runtimeRef: b41i
+      - field: No.
+    name: Item Card - No.
+    valueType: string
+    description: Copy value from <caption>No.</caption>
+  - type: close-page
+    target:
+      - page: Item Card
+        runtimeRef: b41i
+    description: Close page <caption>New - Item Card</caption>
+  - type: page-closed
+    source:
+      page: Item Card
+    runtimeId: b41i
+    description: Page <caption>New - Item Card</caption> was closed.
+  - type: close-page
+    target:
+      - page: Item List
+        runtimeRef: b3m3
+    description: Close page <caption>Items</caption>
+  - type: page-closed
+    source:
+      page: Item List
+    runtimeId: b3m3
+    description: Page <caption>Items</caption> was closed.
+  - type: navigate
+    target:
+      - page: Assembly Orders
+    description: Navigate to Assembly Orders
+  - type: page-shown
+    source:
+      page: Assembly Orders
+    modal: false
+    runtimeId: b4em
+    description: Page <caption>Assembly Orders</caption> was shown.
+  - type: invoke
+    target:
+      - page: Assembly Orders
+        runtimeRef: b4em
+      - action: Control_New
+    invokeType: New
+    description: Invoke New on <caption>New</caption>
+  - type: page-shown
+    source:
+      page: Assembly Order
+    modal: false
+    runtimeId: b4jk
+    description: Page <caption>New - Assembly Order</caption> was shown.
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - field: No.
+    description: Focus <caption>No.</caption>
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Type
+    description: Focus <caption>Type</caption>
+  - type: input
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Type
+    value: 1
+    description: Input <value>1</value> into <caption>Type</caption>
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Type
+    description: Focus <caption>Type</caption>
+  - type: input
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: No.
+    value: ""
+    isFilterAsYouType: true
+    description: Input <value></value> into <caption>No.</caption>
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: No.
+    description: Focus <caption>No.</caption>
+  - type: page-shown
+    source:
+      page: lookup:No.
+    modal: false
+    runtimeId: b4ub
+    description: Page <caption>Select</caption> was shown.
+  - type: close-page
+    target:
+      - page: lookup:No.
+        runtimeRef: b4ub
+    description: Close page <caption>Select</caption>
+  - type: page-closed
+    source:
+      page: lookup:No.
+    runtimeId: b4ub
+    description: Page <caption>Select</caption> was closed.
+  - type: input
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: No.
+    value: =Clipboard.'Item Card - No.'
+    description: Input <value>Clipboard.'Item Card - No.'</value> into
+      <caption>No.</caption>
+  - type: set-current-row
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+    targetRecord:
+      relative: 1
+    description: Set current row in <caption>Group</caption>
+  - type: validate
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Description
+    operation: =
+    value: =Clipboard.'Extended Text Lines - Text'
+    description: Validate <caption>Description</caption> <operation>is</operation>
+      <value>Clipboard.'Extended Text Lines - Text'</value>
+  - type: close-page
+    target:
+      - page: Assembly Order
+        runtimeRef: b71c
+    description: Close page <caption>New - Assembly Order - A00005</caption>
+  - type: page-closed
+    source:
+      page: Assembly Order
+    runtimeId: b71c
+    description: Page <caption>New - Assembly Order - A00005</caption> was closed.
+  - type: close-page
+    target:
+      - page: Assembly Orders
+        runtimeRef: b6we
+    description: Close page <caption>Assembly Orders</caption>
+  - type: page-closed
+    source:
+      page: Assembly Orders
+    runtimeId: b6we
+    description: Page <caption>Assembly Orders</caption> was closed.

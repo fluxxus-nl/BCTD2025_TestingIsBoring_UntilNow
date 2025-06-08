@@ -1,0 +1,3 @@
+{"test_setup": {"ScenarioId": 5, "AssemblyDocumentType": 'Order', "Automatic Ext. Texts Enabled": false, "Extended Text Enabled": false}, "expected_data": {}}
+{"test_setup": {"ScenarioId": 10, "AssemblyDocumentType": 'Quote', "Automatic Ext. Texts Enabled": false, "Extended Text Enabled": false}, "expected_data": {}}
+{"test_setup": {"ScenarioId": 15, "AssemblyDocumentType": 'Blanket Order', "Automatic Ext. Texts Enabled": false, "Extended Text Enabled": false}, "expected_data": {}}

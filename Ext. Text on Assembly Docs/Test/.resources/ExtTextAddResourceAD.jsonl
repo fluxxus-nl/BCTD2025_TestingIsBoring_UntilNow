@@ -1,0 +1,9 @@
+{"test_setup": {"ScenarioId": 25, "AssemblyDocumentType": 'Order', "Automatic Ext. Texts Enabled": false, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 0}}
+{"test_setup": {"ScenarioId": 26, "AssemblyDocumentType": 'Order', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 1}}
+{"test_setup": {"ScenarioId": 70, "AssemblyDocumentType": 'Order', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": false}, "expected_data": {"Created No. of Extended Text Lines": 0}}
+{"test_setup": {"ScenarioId": 32, "AssemblyDocumentType": 'Quote', "Automatic Ext. Texts Enabled": false, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 0}}
+{"test_setup": {"ScenarioId": 33, "AssemblyDocumentType": 'Quote', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 1}}
+{"test_setup": {"ScenarioId": 71, "AssemblyDocumentType": 'Quote', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": false}, "expected_data": {"Created No. of Extended Text Lines": 0}}
+{"test_setup": {"ScenarioId": 39, "AssemblyDocumentType": 'Blanket Order', "Automatic Ext. Texts Enabled": false, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 0}}
+{"test_setup": {"ScenarioId": 40, "AssemblyDocumentType": 'Blanket Order', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 1}}
+{"test_setup": {"ScenarioId": 72, "AssemblyDocumentType": 'Blanket Order', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": false}, "expected_data": {"Created No. of Extended Text Lines": 0}}

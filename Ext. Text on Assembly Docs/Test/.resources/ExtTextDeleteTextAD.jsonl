@@ -1,0 +1,3 @@
+{"test_setup": {"ScenarioId": 52, "AssemblyDocumentType": 'Order', "Extended Text Enabled": false}, "expected_data": {}}
+{"test_setup": {"ScenarioId": 59, "AssemblyDocumentType": 'Quote', "Extended Text Enabled": false}, "expected_data": {}}
+{"test_setup": {"ScenarioId": 66, "AssemblyDocumentType": 'Blanket Order', "Extended Text Enabled": false}, "expected_data": {}}
