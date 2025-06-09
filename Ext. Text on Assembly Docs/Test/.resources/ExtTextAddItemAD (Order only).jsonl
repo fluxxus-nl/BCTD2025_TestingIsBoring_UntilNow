@@ -1,0 +1,3 @@
+{"test_setup": {"ScenarioId": 1, "AssemblyDocumentType": 'Order', "Automatic Ext. Texts Enabled": false, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 0}}
+{"test_setup": {"ScenarioId": 2, "AssemblyDocumentType": 'Order', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": true}, "expected_data": {"Created No. of Extended Text Lines": 1}}
+{"test_setup": {"ScenarioId": 67, "AssemblyDocumentType": 'Order', "Automatic Ext. Texts Enabled": true, "Extended Text Enabled": false}, "expected_data": {"Created No. of Extended Text Lines": 0}}
