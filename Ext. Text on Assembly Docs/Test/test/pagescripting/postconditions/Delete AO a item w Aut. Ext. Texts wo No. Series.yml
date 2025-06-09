@@ -1,0 +1,120 @@
+name: Delete assembly order and item w Aut. Ext. Texts wo No. Series
+description: Test recording
+start:
+  profile: ORDER PROCESSOR
+steps:
+  - type: navigate
+    target:
+      - page: Assembly Orders
+    description: Navigate to Assembly Orders
+  - type: page-shown
+    source:
+      page: Assembly Orders
+    modal: false
+    runtimeId: bh11
+    description: Page <caption>Assembly Orders</caption> was shown.
+  - type: invoke
+    target:
+      - page: Assembly Orders
+        runtimeRef: bh11
+      - repeater: Control1
+    invokeType: Delete
+    description: Invoke Delete on <caption>Control1</caption>
+  - type: page-shown
+    source:
+      page: null
+      automationId: 00000000-0000-0000-0400-0000836bd2d2
+      caption: Confirm
+    modal: true
+    runtimeId: bhrb
+    description: Page <caption>Confirm</caption> was shown.
+  - type: invoke
+    target:
+      - page: null
+        automationId: 00000000-0000-0000-0400-0000836bd2d2
+        caption: Confirm
+        runtimeRef: bhrb
+    invokeType: Yes
+    description: Invoke Yes on <caption>Confirm</caption>
+  - type: page-closed
+    source:
+      page: null
+    runtimeId: bhrb
+    description: Page <caption>Confirm</caption> was closed.
+  - type: page-closed
+    source:
+      page: Assembly Order
+    runtimeId: bhgn
+    description: Page <caption>Assembly Order - A00010</caption> was closed.
+  - type: close-page
+    target:
+      - page: Assembly Orders
+        runtimeRef: bh11
+    description: Close page <caption>Assembly Orders</caption>
+  - type: page-closed
+    source:
+      page: Assembly Orders
+    runtimeId: bh11
+    description: Page <caption>Assembly Orders</caption> was closed.
+  - type: navigate
+    target:
+      - page: Item List
+    description: Navigate to Items
+  - type: page-shown
+    source:
+      page: Item List
+    modal: false
+    runtimeId: bhs9
+    description: Page <caption>Items</caption> was shown.
+  - type: input
+    target:
+      - page: Item List
+        runtimeRef: bhs9
+      - scope: filter
+        field: filter:system:search
+    value: itemexttext
+    isFilterAsYouType: true
+    description: Input <value>itemexttext</value> into <caption>Search</caption>
+  - type: invoke
+    target:
+      - page: Item List
+        runtimeRef: bhs9
+      - repeater: Control1
+    invokeType: Delete
+    description: Invoke Delete on <caption>Item</caption>
+  - type: page-shown
+    source:
+      page: null
+      automationId: 00000000-0000-0000-0400-0000836bd2d2
+      caption: Confirm
+    modal: true
+    runtimeId: bidu
+    description: Page <caption>Confirm</caption> was shown.
+  - type: invoke
+    target:
+      - page: null
+        automationId: 00000000-0000-0000-0400-0000836bd2d2
+        caption: Confirm
+        runtimeRef: bidu
+    invokeType: Yes
+    description: Invoke Yes on <caption>Confirm</caption>
+  - type: page-closed
+    source:
+      page: null
+    runtimeId: bidu
+    description: Page <caption>Confirm</caption> was closed.
+  - type: page-closed
+    source:
+      page: Item Card
+    runtimeId: bi4g
+    description: Page <caption>Item Card</caption> was closed.
+  - type: close-page
+    target:
+      - page: Item List
+        runtimeRef: bhs9
+    description: Close page <caption>Items</caption>
+  - type: page-closed
+    source:
+      page: Item List
+    runtimeId: bhs9
+    description: Page <caption>Items</caption> was closed.

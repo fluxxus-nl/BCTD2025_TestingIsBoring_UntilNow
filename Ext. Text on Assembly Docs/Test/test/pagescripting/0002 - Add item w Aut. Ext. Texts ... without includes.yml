@@ -1,0 +1,153 @@
+name: 0002 - Add to assembly order line for item with Aut. Ext. Texts enabled (with includes)
+  and ext. text enable
+description: Test recording
+start:
+  profile: ORDER PROCESSOR
+steps:
+
+  - type: navigate
+    target:
+      - page: Assembly Orders
+    description: Navigate to Assembly Orders
+  - type: page-shown
+    source:
+      page: Assembly Orders
+    modal: false
+    runtimeId: b4em
+    description: Page <caption>Assembly Orders</caption> was shown.
+  - type: invoke
+    target:
+      - page: Assembly Orders
+        runtimeRef: b4em
+      - action: Control_New
+    invokeType: New
+    description: Invoke New on <caption>New</caption>
+  - type: page-shown
+    source:
+      page: Assembly Order
+    modal: false
+    runtimeId: b4jk
+    description: Page <caption>New - Assembly Order</caption> was shown.
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - field: No.
+    description: Focus <caption>No.</caption>
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Type
+    description: Focus <caption>Type</caption>
+  - type: input
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Type
+    value: 1
+    description: Input <value>1</value> into <caption>Type</caption>
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Type
+    description: Focus <caption>Type</caption>
+  - type: input
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: No.
+    value: ""
+    isFilterAsYouType: true
+    description: Input <value></value> into <caption>No.</caption>
+  - type: focus
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: No.
+    description: Focus <caption>No.</caption>
+  - type: page-shown
+    source:
+      page: lookup:No.
+    modal: false
+    runtimeId: b4ub
+    description: Page <caption>Select</caption> was shown.
+  - type: close-page
+    target:
+      - page: lookup:No.
+        runtimeRef: b4ub
+    description: Close page <caption>Select</caption>
+  - type: page-closed
+    source:
+      page: lookup:No.
+    runtimeId: b4ub
+    description: Page <caption>Select</caption> was closed.
+  - type: input
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: No.
+    value: ITEMEXTTEXT
+    description: Input <value>ITEMEXTTEXT</value> into
+      <caption>No.</caption>
+  - type: set-current-row
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+    targetRecord:
+      relative: 1
+    description: Set current row in <caption>Group</caption>
+  - type: validate
+    target:
+      - page: Assembly Order
+        runtimeRef: b4jk
+      - part: Lines
+      - page: Assembly Order Subform
+      - repeater: Group
+      - field: Description
+    operation: =
+    value: 'Extended text enabled for assembly order'
+    description: Validate <caption>Description</caption> <operation>is</operation>
+      <value>Extended text enabled for assembly order</value>
+  - type: close-page
+    target:
+      - page: Assembly Order
+        runtimeRef: b71c
+    description: Close page <caption>New - Assembly Order - A00005</caption>
+  - type: page-closed
+    source:
+      page: Assembly Order
+    runtimeId: b71c
+    description: Page <caption>New - Assembly Order - A00005</caption> was closed.
+  - type: close-page
+    target:
+      - page: Assembly Orders
+        runtimeRef: b6we
+    description: Close page <caption>Assembly Orders</caption>
+  - type: page-closed
+    source:
+      page: Assembly Orders
+    runtimeId: b6we
+    description: Page <caption>Assembly Orders</caption> was closed.
